@@ -33,6 +33,11 @@ export function Layout(props: propsLayout) {
                         <a>Pessoas</a>
                     </Link>
                 </li>
+                <li>
+                    <Link href="/dashboard/people/filtro">
+                        <a>Filtrar pessoa</a>
+                    </Link>
+                </li>
             </ul>
             <main>
                 {props.children}
