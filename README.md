@@ -10,6 +10,6 @@ yarn dev
 
 ### Funcionalidades
 
-* Router dinamic
+* Router dinamic with server side render
 * Logger with pino
-* 
+* Context api
