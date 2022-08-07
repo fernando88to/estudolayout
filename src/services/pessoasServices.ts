@@ -1,5 +1,4 @@
-import {Pessoa} from "./types/Pessoa";
-import {number} from "prop-types";
+import {Pessoa} from "@/types/Pessoa";
 
 export const pessoasServices = {
     list: (): Pessoa[] => {

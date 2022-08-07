@@ -1,9 +1,9 @@
 import '../styles/globals.css'
 import type {AppProps} from 'next/app'
-import {Layout} from "../components/Layout";
-import ContextoGeral from "../context/ContextoGeral";
+import ContextoGeral from "@/context/ContextoGeral";
 import {useState} from "react";
-import {Pessoa} from "../types/Pessoa";
+import {Layout} from "@/components/Layout";
+
 
 function MyApp({Component, pageProps}: AppProps) {
     const [user, setUser] = useState({

@@ -1,9 +1,9 @@
-import {GetServerSideProps, GetServerSidePropsContext, NextPage} from "next";
-import logger from "../../../util/next-pino/logger";
-import {Pessoa} from "../../../types/Pessoa";
-import {pessoasServices} from "../../../pessoasServices";
 import {useState} from "react";
+import {GetServerSideProps, GetServerSidePropsContext, NextPage} from "next";
 import Link from "next/link";
+import {Pessoa} from "@/types/Pessoa";
+import logger from "@/util/next-pino/logger";
+import {pessoasServices} from "@/services/pessoasServices";
 
 
 export const getServerSiderProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {

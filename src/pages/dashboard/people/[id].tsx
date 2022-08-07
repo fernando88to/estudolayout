@@ -1,7 +1,7 @@
 import type {GetServerSideProps, GetServerSidePropsContext, NextPage} from 'next'
 import Head from 'next/head'
-import {Pessoa} from "../../../types/Pessoa";
-import {pessoasServices} from "../../../pessoasServices";
+import {Pessoa} from "@/types/Pessoa";
+import {pessoasServices} from "@/services/pessoasServices";
 
 
 interface props {

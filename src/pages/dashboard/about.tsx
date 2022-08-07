@@ -1,7 +1,7 @@
 import type {GetServerSideProps, GetServerSidePropsContext, NextPage} from 'next'
 import Head from 'next/head'
 import {useContext} from "react";
-import ContextoGeral from "../../context/ContextoGeral";
+import ContextoGeral from "@/context/ContextoGeral";
 
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
     return {

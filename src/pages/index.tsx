@@ -1,6 +1,6 @@
 import type {GetServerSideProps, GetServerSidePropsContext, NextPage} from 'next'
 import Head from 'next/head'
-import logger from '../util/next-pino/logger';
+import logger from "@/util/next-pino/logger";
 
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
 

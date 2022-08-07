@@ -1,13 +1,11 @@
 import type {GetServerSideProps, GetServerSidePropsContext, NextPage} from 'next'
 import Head from 'next/head'
-import {Pessoa} from "../../../types/Pessoa";
-import {pessoasServices} from "../../../pessoasServices";
 import Link from "next/link";
-
+import {Pessoa} from "@/types/Pessoa";
+import {pessoasServices} from "@/services/pessoasServices";
 
 interface props {
     pessoa: Pessoa[]
-
 }
 
 export const getServerSideProps: GetServerSideProps<props> = async (context: GetServerSidePropsContext) => {
@@ -50,5 +48,4 @@ const About: NextPage<props> = (props: props) => {
         </div>
     )
 }
-
 export default About
