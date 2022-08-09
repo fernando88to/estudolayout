@@ -19,7 +19,7 @@ const Home: NextPage = () => {
             <Head>
                 <title>Pagina Inicial</title>
             </Head>
-            <h2>Pagina inicial</h2>
+            <h2 role="titulo">Pagina inicial</h2>
 
 
         </div>
