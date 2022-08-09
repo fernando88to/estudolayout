@@ -1,7 +1,7 @@
 import type {GetServerSideProps, GetServerSidePropsContext, NextPage} from 'next'
 import Head from 'next/head'
 import logger from "@/util/next-pino/logger";
-//import '@fontsource/roboto';
+import {Button} from "@mui/material";
 
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
 
@@ -12,7 +12,7 @@ export const getServerSideProps: GetServerSideProps = async (context: GetServerS
 
 const Home: NextPage = () => {
 
-    //console.log('Home page loaded')
+
     logger.info('Home page loaded');
     return (
         <div>
@@ -20,6 +20,15 @@ const Home: NextPage = () => {
                 <title>Pagina Inicial</title>
             </Head>
             <h2>Pagina inicial</h2>
+            <Button variant="text" color="primary">
+                Hello World
+            </Button>
+            <Button variant="contained" color="primary">
+                Hello World
+            </Button>
+            <Button variant="outlined" color="primary">
+                Hello World
+            </Button>
 
 
         </div>
