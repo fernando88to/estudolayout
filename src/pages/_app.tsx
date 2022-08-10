@@ -5,7 +5,7 @@ import {useState} from "react";
 import {Layout} from "@/components/Layout";
 import Head from "next/head";
 import {ThemeProvider} from "@mui/material";
-import {LighTheme} from "@/util/theme/LighTheme";
+import {LighTheme} from "@/util/theme";
 
 
 function MyApp({Component, pageProps}: AppProps) {
