@@ -1,48 +1,47 @@
-import React, {createContext, useCallback, useContext, useMemo, useState} from "react";
-import {ThemeProvider} from "@mui/material";
+import React, {createContext, useCallback, useEffect, useMemo, useState} from "react";
 import {DarkTheme, LighTheme} from "@/util/theme";
-import {Box} from "@mui/system";
+import {Box, ThemeProvider} from "@mui/system";
 import logger from "@/util/next-pino/logger";
 
-interface IThemeContextData {
+interface IThemeContext {
     themeName: 'light' | 'dark'
     toggleTheme: () => void;
-
 }
+
+export const ThemeContext = createContext({} as IThemeContext);
 
 interface Iprops {
     children: React.ReactNode
 }
 
-export const ThemeContext = createContext({} as IThemeContextData);
-
-
 export const AppThemeProvider = (props: Iprops) => {
-
-
     const [themeName, setThemeName] = useState<'light' | 'dark'>('light');
 
-
+    logger.info("RENDERIZA AppThemeProvider");
     const toggleTheme = useCallback(() => {
         logger.info("Chama toggleTheme");
         setThemeName(oldThemeName => oldThemeName === 'light' ? 'dark' : 'light');
     }, []);
 
+    /* const toggleTheme = () => {
+         logger.info("Chama toggleTheme");
+         setThemeName(oldThemeName => oldThemeName === 'light' ? 'dark' : 'light');
+     }
+ */
+
     const theme = useMemo(() => {
+        logger.info("Chama useMemo");
         if (themeName === 'light') return LighTheme;
         return DarkTheme;
     }, [themeName])
 
     return (
-
         <ThemeContext.Provider value={{themeName, toggleTheme}}>
             <ThemeProvider theme={theme}>
-                <Box width="100vh" height="100vh" bgcolor={theme.palette.background.default}>
+                <Box sx={{width: 1, height: '100%'}} bgcolor={theme.palette.background.default}>
                     {props.children}
                 </Box>
             </ThemeProvider>
         </ThemeContext.Provider>
     );
 }
-
-

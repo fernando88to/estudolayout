@@ -4,7 +4,6 @@ import ContextoGeral from "@/context/ContextoGeral";
 import {useState} from "react";
 import {Layout} from "@/components/Layout";
 import Head from "next/head";
-import {AppThemeProvider} from "@/context/ThemeContext";
 
 
 
@@ -15,14 +14,14 @@ function MyApp({Component, pageProps}: AppProps) {
     return (
         <ContextoGeral.Provider value={{user, setUser}}>
 
-            <AppThemeProvider>
+
                 <Layout>
                     <Head>
                         <meta name="viewport" content="initial-scale=1, width=device-width" />
                     </Head>
                     <Component {...pageProps} />
                 </Layout>
-            </AppThemeProvider>
+
 
         </ContextoGeral.Provider>
 

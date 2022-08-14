@@ -5,6 +5,7 @@ import {Button} from "@mui/material";
 import {useAppThemeContext} from "../hook";
 
 
+
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
     return {
         props: {},
@@ -13,6 +14,7 @@ export const getServerSideProps: GetServerSideProps = async (context: GetServerS
 
 const Home: NextPage = () => {
     const {toggleTheme} = useAppThemeContext();
+
     logger.info('Home page loaded');
     return (
         <div>
