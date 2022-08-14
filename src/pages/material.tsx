@@ -2,17 +2,17 @@ import type {GetServerSideProps, GetServerSidePropsContext, NextPage} from 'next
 import Head from 'next/head'
 import logger from "@/util/next-pino/logger";
 import {Button} from "@mui/material";
+import {useAppThemeContext} from "../hook";
+
 
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
-
     return {
         props: {},
     };
 };
 
 const Home: NextPage = () => {
-
-
+    const {toggleTheme} = useAppThemeContext();
     logger.info('Home page loaded');
     return (
         <div>
@@ -26,8 +26,8 @@ const Home: NextPage = () => {
             <Button variant="contained" color="primary">
                 Hello World
             </Button>
-            <Button variant="outlined" color="primary">
-                Hello World
+            <Button variant="outlined" color="primary" onClick={toggleTheme}>
+                Trocar Thema
             </Button>
 
 
