@@ -4,6 +4,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import {Container} from "@mui/system";
 
 interface propsLayout {
     children: React.ReactNode
@@ -46,5 +47,6 @@ export function Layout(props: propsLayout) {
 
             <footer>Rodape</footer>
         </div>
+
     );
 }

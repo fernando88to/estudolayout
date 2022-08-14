@@ -1,7 +1,7 @@
 import React, {createContext, useCallback, useContext, useMemo, useState} from "react";
 import {ThemeProvider} from "@mui/material";
 import {DarkTheme, LighTheme} from "@/util/theme";
-import {Box} from "@mui/system";
+import {Box, Container} from "@mui/system";
 import logger from "@/util/next-pino/logger";
 
 interface IThemeContextData {
@@ -37,9 +37,11 @@ export const AppThemeProvider = (props: Iprops) => {
 
         <ThemeContext.Provider value={{themeName, toggleTheme}}>
             <ThemeProvider theme={theme}>
-                <Box width="100vh" height="100vh" bgcolor={theme.palette.background.default}>
-                    {props.children}
-                </Box>
+                <Container >
+                    <Box height="100vh" bgcolor={theme.palette.background.default}>
+                        {props.children}
+                    </Box>
+                </Container>
             </ThemeProvider>
         </ThemeContext.Provider>
     );
